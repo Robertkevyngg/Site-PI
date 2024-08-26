@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semeador Voluntário</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #3a3a8e;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .header-section {
+            background-image: url('background-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .header-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .header-section p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .donation-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: -50px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #3a3a8e;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-blue {
+            background-color: #009fb7;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-blue h2, .section-blue p {
+            color: white;
+            font-size: 28px;
+        }
+
+        .section-orange {
+            background-color: #f58220;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-orange h2, .section-orange p {
+            color: white;
+            font-size: 28px;
+        }
+
+        .btn-orange {
+            background-color: #f58220;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn-orange:hover {
+            background-color: #e06b1d;
+        }
+
+        footer {
+            background-color: #3a3a8e;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilo específico para o QR Code PIX */
+        .pix-section {
+            padding: 40px 0;
+            text-align: center;
+            display: none; /* Oculto inicialmente */
+        }
+
+        .pix-qr-code {
+            margin: 20px 0;
+            border: 10px solid #3a3a8e;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .instagram-feed {
+            max-width: 100%;
+            height: auto;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Semeador Voluntário</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donate">Doar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Seja um Semeador Voluntário</h1>
+        <p>Veja como doar e transformar vidas.</p>
+        <p id="location" class="text-center"></p>
+    </div>
+
+    <!-- Donation Form Section -->
+    <div id="donate" class="container donation-form">
+        <h2 class="section-title text-center">Doe via PIX</h2>
+        <p class="text-center">Escolha a opção de doação abaixo:</p>
+        <div class="text-center">
+            <button class="btn btn-orange" id="show-pix">Doar com PIX</button>
+        </div>
+        <div class="pix-section" id="pix-section">
+            <h3 class="text-center mt-4">Use o QR Code abaixo para doar via PIX</h3>
+            <img id="pix-qr-code" class="pix-qr-code" src="https://seu-servidor.com/path-to-generated-qr-code" alt="QR Code PIX">
+            <p>Escaneie o QR Code com o app do seu banco para doar.</p>
+        </div>
+    </div>
+
+    <!-- Section: Sobre -->
+    <div id="about" class="container section">
+        <h2 class="section-title text-center">Faça parte dessa história</h2>
+        <p class="text-center">
+            Desde 1974, a Escola Metodista "O Semeador" é uma instituição beneficente, sem fins lucrativos que atende crianças e adolescentes com deficiência intelectual, múltiplas deficiências e autismo a partir dos 06 anos de idade. Nosso trabalho se baseia nas diversas formas de linguagem, usando educação, arte, tecnologia e o lúdico como meio de inclusão.
+        </p>
+    </div>
+
+    <!-- Section: Contribuição -->
+    <div class="section-blue">
+        <div class="container">
+            <h2>Ajudar é transformar vidas</h2>
+            <p>Multiplique nossas ações e fortaleça nosso objetivo. Seja um Semeador Voluntário!</p>
+        </div>
+    </div>
+
+    <!-- Section: Impacto das Doações -->
+    <div class="container section">
+        <h2 class="section-title text-center">Como sua doação fará a diferença:</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>Desenvolver a apreciação pela diversidade individual;</li>
+                    <li>Adquirir experiência direta com a variação natural das capacidades humanas;</li>
+                    <li>Demonstrar crescente responsabilidade e melhora na aprendizagem, através do convívio entre os colegas;</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Vivenciar as experiências de interação e trabalho reais, com parcerias de estágio;</li>
+                    <li>Frequentemente experimentar apoio acadêmico adicional da parte de nossos psicólogos;</li>
+                    <li>Proteger os direitos e condições civis de nossos jovens;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Call to Action -->
+    <div class="section-orange">
+        <div class="container">
+            <h2>Transforme o futuro de muitas famílias</h2>
+            <p>Sua doação irá transformar vidas e ajudar a construir um futuro melhor para nossas crianças.</p>
+            <button id="checkout-button" class="btn btn-primary btn-lg">FAÇA SUA DOAÇÃO AGORA</button>
+        </div>
+    </div>
+
+    <!-- Instagram Feed -->
+    <div class="container instagram-feed">
+        <h2 class="section-title text-center">Nos siga no Instagram</h2>
+        <iframe src="https://lightwidget.com/widgets/your_widget_code.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Semeador Voluntário. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Mostrar/Esconder PIX -->
+    <script>
+        document.getElementById('show-pix').addEventListener('click', function() {
+            var pixSection = document.getElementById('pix-section');
+            if (pixSection.style.display === "none" || pixSection.style.display === "") {
+                pixSection.style.display = "block";
+                this.innerText = "Esconder PIX";
+            } else {
+                pixSection.style.display = "none";
+                this.innerText = "Doar com PIX";
+            }
+        });
+    </script>
+
+    <!-- API de Geolocalização -->
+    <script>
+        fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            document.getElementById('location').innerHTML = `Localização: ${data.city}, ${data.region}, ${data.country_name}`;
+        })
+        .catch(error => console.log('Erro ao obter localização:', error));
+    </script>
+
+    <!-- API de Pagamento/Doação (Stripe) -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('YOUR_PUBLIC_KEY');
+        var checkoutButton = document.getElementById('checkout-button');
+
+        checkoutButton.addEventListener('click', function () {
+            fetch('/create-checkout-session', {
+                method: 'POST',
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (sessionId) {
+                return stripe.redirectToCheckout({ sessionId: sessionId });
+            })
+            .then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            })
+            .catch(function (error) {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+
+    <!-- API de Newsletter (Mailchimp) -->
+    <script>
+        document.querySelector('#newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var email = document.querySelector('#email').value;
+
+            fetch('https://usX.api.mailchimp.com/3.0/lists/YOUR_LIST_ID/members/', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Basic ' + btoa('anystring:YOUR_API_KEY'),
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'email_address': email,
+                    'status': 'subscribed'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Sucesso:', data);
+                alert('Você foi adicionado à nossa newsletter!');
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Houve um erro ao se inscrever. Tente novamente mais tarde.');
+            });
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+</body>
+</html>
